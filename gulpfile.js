@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var maps = require('gulp-sourcemaps');
 
 // gulp.task('concat', function(){
 //     gulp.src(['the files you want to concat, location in the project'])
@@ -21,7 +22,9 @@ var sass = require('gulp-sass');
 
 gulp.task('sass', function(){
     gulp.src('public/scss/master.scss')//where is the location of the scss files or file
+    .pipe(maps.init()) //before sass
     .pipe(sass())
+    .pipe(maps.write('./')) //relative directory to sass
     .pipe(gulp.dest('public/style')); //where do you want them to end up
 })
 
