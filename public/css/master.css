@@ -2,7 +2,11 @@
   font-family: helvetica; }
 
 body {
-  background-color: red; }
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 h1 {
   color: white;

@@ -27,7 +27,7 @@ gulp.task('uglify', function(){
     .pipe(gulp.dest('./public/scripts'))//location of where you want the minify file to go
 })
 
-gulp.task('sass', function(){
+gulp.task('compileSass', function(){
     gulp.src('./public/scss/master.scss')//where is the location of the scss files or file
     .pipe(maps.init()) //before sass
     .pipe(sass())
@@ -42,8 +42,14 @@ gulp.task('minify', function(){
     .pipe(gulp.dest('./public/css'))
 })
 
+//gulp watch tasks
+gulp.task('watch', function(){
+    gulp.watch('./public/scss/**/*.scss', ['compileSass'])//provide files to watch, provide array of files, can do individual files or use a globing pattern like the once shown *.scss means anything with scss extention. Then provide the task name
+    gulp.watch('./public/js/**/*.js', ['concat'])
+})
+
 //gulp commands
-gulp.task('default', ['sass', 'concat'], function(){ //list the tasks, first argument is just the name
+gulp.task('default', ['compileSass', 'concat'], function(){ //list the tasks, first argument is just the name
     console.log('gulp is running...');
 })
 //run after you compiled everything and site is ready for production
