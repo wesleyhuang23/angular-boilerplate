@@ -8,12 +8,10 @@ var sass = require('gulp-sass'); //compiles sass to css
 var maps = require('gulp-sourcemaps'); //allows you to locate where the original file is
 var minifyCSS = require('gulp-minify-css'); //minify's css
 
+
 gulp.task('concat', function(){
     gulp.src([
-        './public/js/app.js',
-        './public/js/appCtrl.js',
-        './public/js/mainSvc.js'
-        ]) //'the files you want to concat, location in the project'
+        './public/js/*.js']) //'the files you want to concat, location in the project'
     .pipe(maps.init()) //allows you to locate js file from master/like css
     .pipe(concat('main.js'))//'name of the file you want to create'
     .pipe(maps.write('./')) //where do you want to sourcemaps file
