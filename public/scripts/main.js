@@ -5,3 +5,4 @@ angular.module('app').controller('appCtrl', function($scope, mainSvc){
 angular.module('app').service('mainSvc', function($http){
     
 })
+//# sourceMappingURL=main.js.map
