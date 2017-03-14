@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
     <head>
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style/master.css" rel="stylesheet">
     </head>
-    <body>
+    <body ng-controller="appCtrl">
 
         <h1>Welcome to the Angular Boilerplate</h1>
+        <p>{{test}}</p>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+    <script src="./scripts/main.js"></script>
     </body>
 </html>
